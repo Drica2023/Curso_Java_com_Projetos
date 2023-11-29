@@ -15,7 +15,7 @@ Progresso do curso:
 
 - [x] Tópicos especiais em java: data-hora
 
-- [ ] Enumerações, composição
+- [x] Enumerações, composição
 
 - [ ] Herança, polimorfismo
 
