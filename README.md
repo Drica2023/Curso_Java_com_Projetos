@@ -17,7 +17,9 @@ Progresso do curso:
 
 - [x] Enumerações, composição
 
-- [ ] Herança, polimorfismo
+- [x] Herança e Sobreposiçao
+  
+- [ ] Polimorfismo
 
 - [ ] Manipulação de arquivos
 
