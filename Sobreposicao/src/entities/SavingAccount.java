@@ -26,4 +26,10 @@ public class SavingAccount extends Account {
 		balance += balance * interestRate;
 	}
 
+	// sobreposicao ou sobrescrita 
+
+	@Override
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
 }
