@@ -19,11 +19,11 @@ Progresso do curso:
 
 - [x] Herança e Sobreposiçao
   
-- [ ] Polimorfismo
+- [x] Polimorfismo e Classe e Metodo Abstract
+      
+- [ ] - [ ] Tratamento de exceções
 
 - [ ] Manipulação de arquivos
-
-- [ ] Tratamento de exceções
 
 - [ ] Projeto: Sistema jogo de Xadre
 
