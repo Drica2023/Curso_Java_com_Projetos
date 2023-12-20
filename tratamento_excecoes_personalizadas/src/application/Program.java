@@ -12,8 +12,8 @@ public class Program {
 
 	public static void main(String[] args) throws ParseException {
 
-		// Solucao 1 (muito ruim): lógica de validação no programa principal
-		// problema é que a logica esta no programa principal, precisaria estar no Reservation
+		// Solucao 2 (ruim): metodo retornando String
+		
 
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
@@ -44,25 +44,17 @@ public class Program {
 			System.out.print("Check-out date (dd/MM/yyyy): ");
 			checkout = sdf.parse(scanner.next());
 			
-			Date now = new Date();
-			if(checkout.before(now) || checkin.before(now) ) {
-				
-				System.out.println("Error in reservation: Reservation dates for update must be future");
-			}
+			String error = reservation.updateDates(checkin, checkout);
+			if (error != null) {
 			
-			else if(!checkout.after(checkin)) {
-				System.out.println("Error in reservation: check-out date must be after check-in date");
-				
-			}else {
-				
-				reservation.updateDates(checkin, checkout);
-				System.out.println("Reservation: " + reservation);
-				
+				System.out.println("Error in reservation: " + error);
 				
 			}
+			else {
+				System.out.println("Reservation: " + reservation);	
 		}
 		
-		
+		}
 		scanner.close();
 	}
 }
