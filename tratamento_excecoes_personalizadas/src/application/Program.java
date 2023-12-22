@@ -7,12 +7,13 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 public class Program {
 
 	public static void main(String[] args) {
 
-		// Solucao 3 boa (tratamento de excecao)
+		// Criando excecoes personalizadas - #1 utilizando extends Exception
 
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
@@ -45,7 +46,7 @@ public class Program {
 		} catch (ParseException e) {
 			System.out.println("Invalid date format ");
 
-		} catch (IllegalArgumentException e) {
+		} catch (DomainException e) {
 			System.out.println(e.getMessage());
 		}
 
