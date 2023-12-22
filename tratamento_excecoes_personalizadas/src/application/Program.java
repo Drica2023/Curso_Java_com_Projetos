@@ -13,7 +13,7 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		// Criando excecoes personalizadas - #1 utilizando extends Exception
+		// Criando excecoes personalizadas - #1 utilizando extends RuntimeException
 
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
@@ -48,6 +48,8 @@ public class Program {
 
 		} catch (DomainException e) {
 			System.out.println(e.getMessage());
+		}catch (RuntimeException e) {
+			System.out.println("Unexpected error");
 		}
 
 		scanner.close();
