@@ -10,51 +10,45 @@ import model.entities.Reservation;
 
 public class Program {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
 
-		// Solucao 2 (ruim): metodo retornando String
-		
+		// Solucao 3 boa (tratamento de excecao)
 
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
-		System.out.print("Room number: ");
-		int number = scanner.nextInt();
-		
-		System.out.print("Check-in date (dd/MM/yyyy): ");
-		Date checkin = sdf.parse(scanner.next());
-		
-		System.out.print("Check-out date (dd/MM/yyyy): ");
-		Date checkout = sdf.parse(scanner.next());
-		
-		if(!checkout.after(checkin)) {
-			System.out.println("Error in reservation: Check- out date must be after date Check-in");
-		}else {
-		
+		try {
+			System.out.print("Room number: ");
+			int number = scanner.nextInt();
+
+			System.out.print("Check-in date (dd/MM/yyyy): ");
+			Date checkin = sdf.parse(scanner.next());
+
+			System.out.print("Check-out date (dd/MM/yyyy): ");
+			Date checkout = sdf.parse(scanner.next());
+
 			Reservation reservation = new Reservation(number, checkin, checkout);
 			System.out.println("Reservation: " + reservation);
-			
+
 			System.out.println("");
-			
+
 			System.out.print("Enter data to update the Reservation: ");
 			System.out.print("Check-in date (dd/MM/yyyy): ");
 			checkin = sdf.parse(scanner.next());
-			
+
 			System.out.print("Check-out date (dd/MM/yyyy): ");
 			checkout = sdf.parse(scanner.next());
 			
-			String error = reservation.updateDates(checkin, checkout);
-			if (error != null) {
-			
-				System.out.println("Error in reservation: " + error);
-				
-			}
-			else {
-				System.out.println("Reservation: " + reservation);	
+			reservation.updateDates(checkin, checkout);
+			System.out.println("Reservation: " + reservation);
+
+		} catch (ParseException e) {
+			System.out.println("Invalid date format ");
+
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
 		}
-		
-		}
+
 		scanner.close();
 	}
 }
