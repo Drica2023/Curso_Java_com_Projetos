@@ -21,11 +21,11 @@ Progresso do curso:
   
 - [x] Polimorfismo e Classe e Metodo Abstract
       
-- [ ] - [ ] Tratamento de exceções
-
-- [ ] Manipulação de arquivos
+- [x] Tratamento de exceções
 
 - [ ] Projeto: Sistema jogo de Xadre
+
+- [ ] Manipulação de arquivos
 
 - [ ] Interfaces
 
