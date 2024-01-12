@@ -23,9 +23,9 @@ Progresso do curso:
       
 - [x] Tratamento de exceções
 
-- [ ] Projeto: Sistema jogo de Xadre
+- [x] Projeto: Sistema jogo de Xadre
 
-- [ ] Manipulação de arquivos
+- [x] Manipulação de arquivos
 
 - [ ] Interfaces
 
